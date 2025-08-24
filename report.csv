@@ -1,0 +1,33 @@
+Type,URL,Payload/Form
+xss,http://testphp.vulnweb.com/,<script>alert('XSS')</script>
+xss,http://testphp.vulnweb.com/userinfo.php,<script>alert('XSS')</script>
+xss,http://testphp.vulnweb.com/cart.php,<script>alert('XSS')</script>
+xss,http://testphp.vulnweb.com/disclaimer.php,<script>alert('XSS')</script>
+sqli,http://testphp.vulnweb.com/,' OR '1'='1 --
+sqli,http://testphp.vulnweb.com/userinfo.php,' OR '1'='1 --
+sqli,http://testphp.vulnweb.com/userinfo.php,' OR '1'='1 --
+sqli,http://testphp.vulnweb.com/cart.php,' OR '1'='1 --
+sqli,http://testphp.vulnweb.com/disclaimer.php,' OR '1'='1 --
+csrf,http://testphp.vulnweb.com/,"<form action=""search.php?test=query"" method=""post"">
+<label>search art</label>
+<input name=""searchFor"" size=""10"" type=""text""/>
+<input name=""goButton"" type=""submit"" value=""go""/>
+</form>"
+csrf,http://testphp.vulnweb.com/userinfo.php,"<form action=""userinfo.php"" method=""post"" name=""loginform"">
+<table cellpadding=""4"" cellspacing=""1"">
+<tr><td>Username : </td><td><input name=""uname"" size=""20"" style=""width:120px;"" type=""text""/></td></t"
+csrf,http://testphp.vulnweb.com/userinfo.php,"<form action=""search.php?test=query"" method=""post"">
+<label>search art</label>
+<input name=""searchFor"" size=""10"" type=""text""/>
+<input name=""goButton"" type=""submit"" value=""go""/>
+</form>"
+csrf,http://testphp.vulnweb.com/cart.php,"<form action=""search.php?test=query"" method=""post"">
+<label>search art</label>
+<input name=""searchFor"" size=""10"" type=""text""/>
+<input name=""goButton"" type=""submit"" value=""go""/>
+</form>"
+csrf,http://testphp.vulnweb.com/disclaimer.php,"<form action=""search.php?test=query"" method=""post"">
+<label>search art</label>
+<input name=""searchFor"" size=""10"" type=""text""/>
+<input name=""goButton"" type=""submit"" value=""go""/>
+</form>"
